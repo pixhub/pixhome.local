@@ -1,0 +1,19 @@
+$ORIGIN .
+$TTL 604800     ; 1 week
+pixhome.local           IN SOA  localhost. root.localhost. (
+                                24         ; serial
+                                604800     ; refresh (1 week)
+                                86400      ; retry (1 day)
+                                2419200    ; expire (4 weeks)
+                                604800     ; minimum (1 week)
+                                )
+                        NS      localhost.
+                        AAAA    ::1
+$ORIGIN pixhome.local.
+dhcp                    A       192.168.10.12
+dns1                    A       192.168.10.10
+dns2                    A       192.168.10.11
+ESXhome                 A       192.168.10.2
+vCenter			A	192.168.10.3
+zabbix                  A       192.168.10.13
+pxhome                  A       192.168.10.14
