@@ -1,0 +1,17 @@
+default menu.c32
+prompt 0
+timeout 300
+ONTIMEOUT LOCAL
+MENU TITLE pixhome PXE Menu
+label 1
+MENU LABEL ^1) Install CentOS 7 64bits LOCAL REPO
+KERNEL centos7/vmlinuz
+APPEND initrd=centos7/initrd.img inst.repo=ftp://192.168.10.14/pub/centos7/ devfs=nomount
+label 2
+MENU LABEL ^2) Install CentOS 7 64bits http://mirrors.centos.org REPO
+KERNEL centos7/vmlinuz
+APPEND initrd=centos7/initrd.img inst.repo=http://mirror.centos.org/centos/7/os/x86_64/ devfs=nomount
+label 3
+MENU LABEL ^3) Install Debian 8 64bits LOCAL REPO
+KERNEL debian8/linux
+APPEND initrd=debian8/initrd.gz inst.repo=ftp://192.168.10.14/pub/debian8 root=/dev/rd/0 devfs=mount,dall rw--
