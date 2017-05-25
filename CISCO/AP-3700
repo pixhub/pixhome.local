@@ -1,0 +1,128 @@
+Current configuration : 2236 bytes
+!
+version 15.3
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname APpixhome
+!
+!
+logging rate-limit console 9
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local
+!
+!
+!
+!
+!
+aaa session-id common
+no ip source-route
+no ip cef
+no ip domain lookup
+ip domain name pixhome.local
+!
+!
+!
+!
+dot11 pause-time 100
+dot11 syslog
+!
+dot11 ssid APpixhome
+   vlan 20
+   authentication open
+   guest-mode
+!
+!
+!
+no ipv6 cef
+!
+!
+username admin privilege 15 password 7 XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+!
+!
+bridge irb
+!
+!
+!
+interface Dot11Radio0
+ no ip address
+ !
+ encryption key 1 size 128bit 7 XXXXXXXXXXXXXXXXXXXXXXXXX transmit-key
+ encryption mode wep mandatory
+ !
+ encryption vlan 20 key 1 size 128bit 7 XXXXXXXXXXXXXXXXXXXXXXXX transmit-key
+ encryption vlan 20 mode wep mandatory
+ !
+ ssid APpixhome
+ !
+ antenna gain 0
+ stbc
+ station-role root
+!
+interface Dot11Radio0.20
+ encapsulation dot1Q 20 native
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 spanning-disabled
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+!
+interface Dot11Radio1
+ no ip address
+ shutdown
+ antenna gain 0
+ peakdetect
+ no dfs band block
+ channel dfs
+ station-role root
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 spanning-disabled
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+!
+interface GigabitEthernet0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0.20
+ encapsulation dot1Q 20 native
+ bridge-group 1
+ bridge-group 1 spanning-disabled
+ no bridge-group 1 source-learning
+!
+interface BVI1
+ mac-address 188b.9da0.2c28
+ ip address 192.168.20.50 255.255.255.0
+ ipv6 address autoconfig
+!
+ip default-gateway 192.168.20.254
+ip forward-protocol nd
+ip http server
+ip http authentication aaa
+no ip http secure-server
+ip http help-path http://www.cisco.com/warp/public/779/smbiz/prodconfig/help/eag
+!
+!
+!
+access-list 111 permit tcp any any neq telnet
+bridge 1 route ip
+!
+!
+!
+line con 0
+ access-class 111 in
+line vty 0 4
+ access-class 111 in
+ transport input all
+!
+end
