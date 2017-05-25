@@ -6,7 +6,7 @@ MENU TITLE pixhome PXE Menu
 label 1
 MENU LABEL ^1) Install CentOS 7 64bits LOCAL REPO
 KERNEL centos7/vmlinuz
-APPEND initrd=centos7/initrd.img inst.repo=ftp://192.168.10.14/pub/centos7/ devfs=nomount
+APPEND initrd=centos7/initrd.img inst.repo=ftp://192.168.10.14/pub/centos7/ devfs=nomount ks=ftp://192.168.10.14/pub/kickstartfiles/centos7.ks ksdevice=bootif
 label 2
 MENU LABEL ^2) Install CentOS 7 64bits http://mirrors.centos.org REPO
 KERNEL centos7/vmlinuz
