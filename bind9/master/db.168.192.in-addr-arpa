@@ -17,4 +17,4 @@ $ORIGIN 10.168.192.in-addr.arpa.
 13                      PTR     zabbix.pixhome.local.
 14                      PTR     pxhome.pixhome.local.
 2                       PTR     ESXhome.pixhome.local.
-3			                  PTR	    vCenter.pixhome.local.
+3                       PTR     vCenter.pixhome.local.
