@@ -1,18 +1,20 @@
 $ORIGIN .
 $TTL 604800     ; 1 week
 168.192.in-addr.arpa    IN SOA  localhost. root.localhost. (
-                                16         ; serial
-                                604800     ; refresh (1 week)
-                                86400      ; retry (1 day)
-                                2419200    ; expire (4 weeks)
-                                604800     ; minimum (1 week)
+                                201705291227 ; serial
+                                604800       ; refresh (1 week)
+                                86400        ; retry (1 day)
+                                2419200      ; expire (4 weeks)
+                                604800       ; minimum (1 week)
                                 )
-                        NS      localhost.
+168.192.in-addr.arpa. IN  NS  dns1.pixhome.local.
+168.192.in-addr.arpa. IN  NS  dns2.pixhome.local.
+
 $ORIGIN 10.168.192.in-addr.arpa.
-10                      PTR     dns1.pixhome.local.168.192.in-addr.arpa.
-11                      PTR     dns2.pixhome.local.168.192.in-addr.arpa.
-12                      PTR     dhcp.pixhome.local.168.192.in-addr.arpa.
-13                      PTR     zabbix.pixhome.local
-14                      PTR     pxhome.pixhome.local
-2                       PTR     ESXhome.pixhome.local
-3			                  PTR	    vCenter.pixhome.local
+10                      PTR     dns1.pixhome.local.
+11                      PTR     dns2.pixhome.local.
+12                      PTR     dhcp.pixhome.local.
+13                      PTR     zabbix.pixhome.local.
+14                      PTR     pxhome.pixhome.local.
+2                       PTR     ESXhome.pixhome.local.
+3			                  PTR	    vCenter.pixhome.local.
