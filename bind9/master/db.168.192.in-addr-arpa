@@ -10,7 +10,8 @@ $TTL 604800     ; 1 week
 168.192.in-addr.arpa. IN  NS  dns1.pixhome.local.
 168.192.in-addr.arpa. IN  NS  dns2.pixhome.local.
 
-$ORIGIN 10.168.192.in-addr.arpa.
+10.168.192.in-addr.arpa.
+
 10                      PTR     dns1.pixhome.local.
 11                      PTR     dns2.pixhome.local.
 12                      PTR     dhcp.pixhome.local.
