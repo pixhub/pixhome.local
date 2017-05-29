@@ -1,20 +1,21 @@
-$ORIGIN .
-$TTL 604800     ; 1 week
-@           IN SOA  pixhome.local. root.pixhome.local. (
-                                24         ; serial
+$TTL 604800
+@                    IN SOA pixhome.local. root.pixhome.local. (
+                                1        ; serial
                                 604800     ; refresh (1 week)
                                 86400      ; retry (1 day)
                                 2419200    ; expire (4 weeks)
                                 604800     ; minimum (1 week)
                                 )
-@                        NS      dns1
-@                        NS      dns2
+@                    IN NS dns1
+@                    IN NS dns2
 
-$ORIGIN pixhome.local.
-dhcp                    A       192.168.10.12
-dns1                    A       192.168.10.10
-dns2                    A       192.168.10.11
-ESXhome                 A       192.168.10.2
-vCenter                 A       192.168.10.3
-zabbix                  A       192.168.10.13
-pxhome                  A       192.168.10.14
+; pixhome.local.
+APpixhome          IN A 192.168.20.50
+dhcp               IN A 192.168.10.12
+dns1               IN A 192.168.10.10
+dns2               IN A 192.168.10.11
+ESXhome            IN A 192.168.10.2
+pxhome             IN A 192.168.10.14
+vCenter            IN A 192.168.10.3
+zabbix             IN A 192.168.10.13
+nfs1               IN A 192.168.10.15
