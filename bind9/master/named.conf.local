@@ -7,26 +7,63 @@
 //include "/etc/bind/zones.rfc1918";
 
 key DDNS_UPDATE {
-        algorithm hmac-md5;
-        secret "+XZkidYSDMkcPm2zKfCABw==";
+	algorithm hmac-md5;
+	secret "+XZkidYSDMkcPm2zKfCABw==";
 };
 
 zone "pixhome.local" {
+	type master;
+	also-notify { 192.168.10.11; };
+	allow-transfer { 192.168.10.11; };
+	file "/etc/bind/db.pixhome.local";
+	allow-query { any; };
+	notify yes;
+};
+
+zone "10.168.192.in-addr.arpa" {
+	type master;
+	also-notify { 192.168.10.11; };
+	allow-transfer { 192.168.10.11; };
+	file "/etc/bind/db.10.168.192.in-addr.arpa";
+	allow-query { any; };
+	notify yes;
+};
+
+zone "20.168.192.in-addr.arpa" {
         type master;
         also-notify { 192.168.10.11; };
         allow-transfer { 192.168.10.11; };
-        file "/etc/bind/db.pixhome.local";
+        file "/etc/bind/db.20.168.192.in-addr.arpa";
         allow-query { any; };
-        allow-update { key DDNS_UPDATE; };
         notify yes;
 };
 
-zone "168.192.in-addr.arpa" {
+zone "pixhome.local.DDNS" {
+	type master;
+	also-notify { 192.168.10.11; };
+	allow-transfer { 192.168.10.11; };
+	file "/etc/bind//db.pixhome.local.DDNS";
+	allow-query { any; };
+	allow-update { key DDNS-UPDATE; };
+	notify yes;
+};
+
+zone "10.168.192.in-addr.arpa.DDNS" {
         type master;
         also-notify { 192.168.10.11; };
         allow-transfer { 192.168.10.11; };
-        file "/etc/bind/db.168.192.in-addr.arpa";
+        file "/etc/bind//db.10.168.192.in-addr.arpa.DDNS";
         allow-query { any; };
-        allow-update { key DDNS_UPDATE; };
+        allow-update { key DDNS-UPDATE; };
+        notify yes;
+};
+
+zone "20.168.192.in-addr.arpa.DDNS" {
+        type master;
+        also-notify { 192.168.10.11; };
+        allow-transfer { 192.168.10.11; };
+        file "/etc/bind//db.20.168.192.in-addr.arpa.DDNS";
+        allow-query { any; };
+        allow-update { key DDNS-UPDATE; };
         notify yes;
 };
