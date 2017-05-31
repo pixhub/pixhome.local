@@ -13,7 +13,7 @@ zone "pixhome.local" {
 	type master;
 	also-notify { 192.168.10.11; };
 	allow-transfer { 192.168.10.11; };
-	file "/etc/bind/db.pixhome.local";
+	file "/etc/bind/master/db.pixhome.local";
 	allow-query { any; };
 	notify yes;
 };
@@ -22,7 +22,7 @@ zone "10.168.192.in-addr.arpa" {
 	type master;
 	also-notify { 192.168.10.11; };
 	allow-transfer { 192.168.10.11; };
-	file "/etc/bind/db.10.168.192.in-addr.arpa";
+	file "/etc/bind/master/db.10.168.192.in-addr.arpa";
 	allow-query { any; };
 	notify yes;
 };
@@ -31,7 +31,7 @@ zone "20.168.192.in-addr.arpa" {
         type master;
         also-notify { 192.168.10.11; };
         allow-transfer { 192.168.10.11; };
-        file "/etc/bind/db.20.168.192.in-addr.arpa";
+        file "/etc/bind/master/db.20.168.192.in-addr.arpa";
         allow-query { any; };
         notify yes;
 };
@@ -44,7 +44,7 @@ zone "pixhome.local.DDNS" {
 	type master;
 	also-notify { 192.168.10.11; };
 	allow-transfer { 192.168.10.11; };
-	file "/etc/bind//db.pixhome.local.DDNS";
+	file "/etc/bind/master/db.pixhome.local.DDNS";
 	allow-query { any; };
 	allow-update { key DDNS-UPDATE; };
 	notify yes;
@@ -54,7 +54,7 @@ zone "10.168.192.in-addr.arpa.DDNS" {
         type master;
         also-notify { 192.168.10.11; };
         allow-transfer { 192.168.10.11; };
-        file "/etc/bind//db.10.168.192.in-addr.arpa.DDNS";
+        file "/etc/bind/master/db.10.168.192.in-addr.arpa.DDNS";
         allow-query { any; };
         allow-update { key DDNS-UPDATE; };
         notify yes;
@@ -64,7 +64,7 @@ zone "20.168.192.in-addr.arpa.DDNS" {
         type master;
         also-notify { 192.168.10.11; };
         allow-transfer { 192.168.10.11; };
-        file "/etc/bind//db.20.168.192.in-addr.arpa.DDNS";
+        file "/etc/bind/master/db.20.168.192.in-addr.arpa.DDNS";
         allow-query { any; };
         allow-update { key DDNS-UPDATE; };
         notify yes;
