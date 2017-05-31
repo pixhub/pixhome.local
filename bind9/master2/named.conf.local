@@ -1,0 +1,5 @@
+view "internal" {
+			match-clients { "trusted" }; };
+			include "/etc/bind/zones.rfc1918";
+			include "/etc/bind/named.conf.default-zones";
+			include "/etc/bind/zones.pixhome.prv";
