@@ -7,5 +7,5 @@ $TTL 604800
                                 2419200      ; expire (4 weeks)
                                 604800       ; minimum (1 week)
                                 )
-20.168.192.in-addr.arpa NS dns1.pixhome.local.
-20.168.192.in-addr.arpa NS dns2.pixhome.local.
+20.168.192.in-addr.arpa.DDNS    IN  NS     dns1.pixhome.local.
+20.168.192.in-addr.arpa.DDNS    IN  NS     dns2.pixhome.local.
