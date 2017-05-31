@@ -1,6 +1,6 @@
 
 $TTL 604800
-@                    IN SOA  pixhome.local. root.pixhome.local. (
+@                    IN SOA  dns1.pixhome.local. root.pixhome.local. (
                                 201705301818 ; serial
                                 604800       ; refresh (1 week)
                                 86400        ; retry (1 day)
@@ -17,4 +17,4 @@ $TTL 604800
 14                   IN PTR pxhome.pixhome.local.
 15                   IN PTR nfs1.pixhome.local.
 2                    IN PTR ESXhome.pixhome.local.
-3                    IN PTR vCenter.pixhome.local.
+3                    IN PTR vcenter.pixhome.local.
