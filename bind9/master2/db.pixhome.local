@@ -20,7 +20,7 @@ dns2                    IN A 192.168.10.11
 ESXhome                 IN A 192.168.10.2
 nfs1                    IN A 192.168.10.15
 pxhome                  IN A 192.168.10.14
-vcenter.pixhome.local.                 IN A 192.168.10.3
+vcenter                 IN A 192.168.10.3
 zabbix                  IN A 192.168.10.13
 
 ;}}}
