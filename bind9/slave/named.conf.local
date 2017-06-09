@@ -12,8 +12,32 @@ zone "pixhome.local" {
         file "/var/lib/bind/db.pixhome.local";
 };
 
-zone "168.192.in-addr.arpa" {
+zone "10.168.192.in-addr.arpa" {
         type slave;
         masters { 192.168.10.10; };
-        file "/var/lib/bind/db.168.192.in-addr.arpa";
+        file "/var/lib/bind/db.10.168.192.in-addr.arpa";
 };
+
+zone "20.168.192.in-addr.arpa" {
+        type slave;
+        masters { 192.168.10.10; };
+        file "/var/lib/bind/db.20.168.192.in-addr.arpa";
+};
+
+#zone "pixhome.local.DDNS" {
+#        type slave;
+#        masters { 192.168.10.10; };
+#        file "/var/lib/bind/db.pixhome.local.DDNS";
+#};
+
+#zone "10.168.192.in-addr.arpa.DDNS" {
+#        type slave;
+#        masters { 192.168.10.10; };
+#        file "/var/lib/bind/db.10.168.192.in-addr.arpa.DDNS";
+#};
+
+#zone "20.168.192.in-addr.arpa.DDNS" {
+#        type slave;
+#        masters { 192.168.10.10; };
+#        file "/var/lib/bind/db.20.168.192.in-addr.arpa.DDNS";
+#};
