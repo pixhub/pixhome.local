@@ -1,7 +1,7 @@
 
 $TTL 604800
 @                    IN  SOA    dns1.pixhome.local. root.pixhome.local. (
-                                                       2017053023   ; serial
+                                                       2017060913   ; serial
                                                        604800       ; refresh (1 week)
                                                        86400        ; retry (1 day)
                                                        2419200      ; expire (4 weeks)
@@ -10,8 +10,8 @@ $TTL 604800
 
 ;{{{NS-RECORDS
 
-10.168.192.in-addr.arpa.    NS dns1.pixhome.local.
-10.168.192.in-addr.arpa.    NS dns2.pixhome.local.
+10.168.192.in-addr.arpa.    IN  NS    dns1.pixhome.local.
+10.168.192.in-addr.arpa.    IN  NS    dns2.pixhome.local.
 
 ;}}}
 
