@@ -13,17 +13,14 @@ chvt 6
 #Get hostname
 echo "Type Hostname :"
 read NAME
-echo ""
 
 #Get IP
 echo "Enter IP address :"
 read ADDR
-echo ""
 
 #Get Gateway
 echo "Enter Gateway :"
 read GW
-echo ""
 
 #build /etc/sysconfig/network
 echo "NETWORKING=yes" > network
@@ -78,7 +75,7 @@ autopart --type=lvm
 clearpart --none --initlabel
 
 #network
-network --device=ens192
+network --device=ens192 --bootproto=dhcp
 
 #Reboot after installation
 reboot
