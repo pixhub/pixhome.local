@@ -17,13 +17,13 @@ $TTL 604800
 
 ;{{{PTR-RECORDS
 
+2                    IN PTR ESXhome.pixhome.local.
+3                    IN PTR vCenter.pixhome.local.
 10                   IN PTR dns1.pixhome.local.
 11                   IN PTR dns2.pixhome.local.
 12                   IN PTR dhcp.pixhome.local.
 13                   IN PTR zabbix.pixhome.local.
 14                   IN PTR pxhome.pixhome.local.
 15                   IN PTR nfs1.pixhome.local.
-2                    IN PTR ESXhome.pixhome.local.
-3                    IN PTR vCenter.pixhome.local.
 
 ;}}}
