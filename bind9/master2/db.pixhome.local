@@ -14,14 +14,14 @@ $TTL 604800
 
 ;{{{LAN-SERVER
 
-dhcp                    IN A 192.168.10.12
+ESXhome                 IN A 192.168.10.2
+vcenter                 IN A 192.168.10.3
 dns1                    IN A 192.168.10.10
 dns2                    IN A 192.168.10.11
-ESXhome                 IN A 192.168.10.2
-nfs1                    IN A 192.168.10.15
-pxhome                  IN A 192.168.10.14
-vcenter                 IN A 192.168.10.3
+dhcp                    IN A 192.168.10.12
 zabbix                  IN A 192.168.10.13
+pxhome                  IN A 192.168.10.14
+nfs1                    IN A 192.168.10.15
 
 ;}}}
 
