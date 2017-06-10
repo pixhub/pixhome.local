@@ -1,7 +1,7 @@
 
 $TTL 604800
 @                               IN  SOA    dns1.pixhome.local. root.pixhome.local. (
-                                           2017060923   ; serial
+                                           2017061009   ; serial
                                            604800       ; refresh (1 week)
                                            86400        ; retry (1 day)
                                            2419200      ; expire (4 weeks)
